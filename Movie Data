@@ -1,0 +1,37 @@
+#First, I wanted to see how many genres there where.
+SELECT 
+count (distinct Genre)
+From `universal-torch-386515.movie_data.movies`
+#Takeaway: There were 17 different genres
+
+#I wanted to check movies release date in descending order
+SELECT 
+Movie_Title, genre, Release_Date
+From `universal-torch-386515.movie_data.movies`
+order by Release_Date
+DESC
+#Takeaway: Don't Breath,Hands of Stone and Mechanic: Resurrection where all released on 8-26-2016.
+
+#I wanted to check the name of the movie that had the highest revenue in descending order
+SELECT 
+Movie_Title, genre,Revenue
+From `universal-torch-386515.movie_data.movies`
+order by Revenue
+DESC
+#Takeaway; Despicable Me 2 had the highest revenue with 970,800,000
+
+#I wanted to see who was the main director and cast member in the Crime genre
+SELECT 
+Movie_Title, Director__1_, Cast__1_
+ FROM `universal-torch-386515.movie_data.movies`
+ Where Genre = "Crime";
+
+#I wanted to see who was the main director and cast member of the highest Revenue movie
+SELECT 
+Movie_Title, Director__1_, Cast__1_, Revenue
+ FROM `universal-torch-386515.movie_data.movies`
+ Where Movie_Title = "Despicable Me 2";
+#Takeaway: The main director and casr member were Chris Renaud and Steve Carell
+
+
+
